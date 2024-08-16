@@ -18,7 +18,9 @@ function checkYear(year) {
 // Adults (age >= 18): $20
 
 
-function ticket_price(age){
+function ticket_price(){
+    var age=prompt("give me your age: ")
+    var price=0
     if (age <= 12) {
         return 10+""+"$"
     } 
@@ -31,7 +33,7 @@ function ticket_price(age){
     return 20 +""+"$"
     }
 }
-console.log(ticket_price(15))
+console.log(ticket_price())
 
 
 // Weather Clothing Adviser: Develop a program that asks the user for the current temperature and whether it is raining or not. Based on this information, advise the user on what clothing to wear.
@@ -56,5 +58,39 @@ function weather_adviser(temperature){
         }
 }
 console.log(weather_adviser((2)))
+
+//Fibonacci Sequence: Implement a recursive function to generate the nth Fibonacci number. The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the two preceding numbers (0, 1, 1, 2, 3, 5, 8, ...).
+
+function fib(n){
+    if n ==0 || n==1{
+        return 1
+    }
+    return fib(n-1)+ fib (n-2)
+
+}
+console.log(fib(6)) 
+
+// Palindrome Checker: Create a recursive function to check if a given string is a palindrome (reads the same forwards and backwards), ignoring spaces, punctuation, and capitalization.
+function palindrome(str){
+    if(str.lenght==0 ||str.length==1){
+        return true
+    }
+    else if(str[0]==str[str.lenght-1]){
+        palindrome(str.slice(1,str.lenght-1))
+    }
+    else{
+        return false
+    }
+}
+// Power Function: Write a recursive function to calculate the result of raising a number to a given power.
+
+
+function power(x,n){
+    if (n==1){
+        return x
+    }
+    return x*power(x,n-1)
+}
+console.log(power(2,3))
 
 
